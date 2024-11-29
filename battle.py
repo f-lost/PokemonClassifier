@@ -36,7 +36,7 @@ class Battle():
         vittoria = False
         if damage == 0:
             print(f"Non ha effetto su {self.enemy_pokemon.name} avversario!")
-        elif damage > 0 and < 1:
+        elif damage > 0 and damage < 1:
             print("Non è molto efficace..")
         elif damage == 1:
             print("Danno neutro...")
