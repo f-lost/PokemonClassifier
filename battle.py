@@ -50,10 +50,8 @@ class Battle():
             print("\nHai vinto! Il {self.enemy_pokemon.name} selvatico è stato sconfitto!")
 
 
-
-
     def generate_enemy_pokemon(self):
-        random_id = random.randint(0, len(self.data["pokemons"]) - 1)
+        random_id = random.randint(0, len(self.pokemons_df) - 1)
         name = self.pokemons_df[random_id]["name"]
         type1 = self.pokemons_df[random_id]["type1"]
         type1_pred = self.pokemons_df[random_id]["type1_pred"]
