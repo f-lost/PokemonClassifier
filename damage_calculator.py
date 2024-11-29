@@ -224,7 +224,6 @@ damage_received = {
 
 
 
-
 def binary_damage_calculation(atk_type, def_type):
     if atk_type in damage_received[def_type].keys():
         return damage_received[def_type][atk_type]
