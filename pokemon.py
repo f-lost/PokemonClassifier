@@ -72,7 +72,7 @@ def ringraziamenti():
 menu = Menu()
 
 elemento1 = Elemento("Gioca", Azione(gioca))
-elemento3 = Elemento("Ringraziamento", Azione(ringraziamenti))
+elemento3 = Elemento("Ringraziamenti", Azione(ringraziamenti))
 
 menu.aggiungi_elemento(elemento1)
 menu.aggiungi_elemento(elemento3)
