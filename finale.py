@@ -33,6 +33,8 @@ predictions = model2.predict(X_test)
 
 
 
+def ringrazia():
+    
 
 
 
@@ -46,7 +48,7 @@ menu = Menu()
 
 elemento1 = Elemento("Gioca", Azione(numero))
 elemento2 = Elemento("Addio", Azione(equazione))
-elemento3 = Elemento("Ringraziamento", Azione(ringrazia))
+elemento3 = Elemento("Ringraziamenti", Azione(ringrazia))
 
 menu.aggiungi_elemento(elemento1)
 menu.aggiungi_elemento(elemento2)
