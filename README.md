@@ -1,4 +1,5 @@
 # PokemonClassifier
+![Pokémon Type Classifier](C:\Users\Utente\Documents\GitHub\PokemonClassifier\header.jpg?raw=true "Header")
 
 Progetto di gruppo: Classficazione del tipo di Pokemon a partire dal dataset: https://www.kaggle.com/datasets/abcsds/pokemon
 
