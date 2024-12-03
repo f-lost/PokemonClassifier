@@ -1,3 +1,6 @@
+import tkinter as tk
+from tkinter import messagebox
+from PIL import Image, ImageTk
 from modulo_menu import Menu, Azione, Elemento
 import pandas as pd
 from sklearn.preprocessing import OneHotEncoder
@@ -7,8 +10,6 @@ from battle import Battle, Pokemon
 import tensorflow as tf
 from tensorflow.keras.models import Sequential # type: ignore
 from tensorflow.keras.layers import Dense # type: ignore
-
-
 
 def load_model():
     # Carico i pesi del modello
@@ -55,16 +56,35 @@ def gioca():
     df = load_dataset()
     battle  = Battle(df)
     while True:
-        
         battle.start_battle()
         nav = input('Vuoi continuare a giocare? (yes/no)')
         if nav == 'no' or nav=='n':
             break
 
 def ringraziamenti():
-    print('\tGrazie per avergiocato')
-    print('Credit: Stefano, Alessio, Roberta, Pier Carlo, Daniele')
+    messagebox.showinfo("Ringraziamenti", "Grazie per aver giocato\nCredit: Stefano, Alessio, Roberta, Pier Carlo, Daniele")
 
+def mostra_menu():
+    root = tk.Tk()
+    root.title("Menu Pokémon")
+    root.geometry("600x400")
+
+    # Caricamento dell'immagine di sfondo
+    bg_image = ImageTk.PhotoImage(Image.open("sfondo.jpg"))
+    canvas = tk.Canvas(root, width=600, height=400)
+    canvas.pack(fill="both", expand=True)
+    canvas.create_image(0, 0, image=bg_image, anchor="nw")
+
+    btn_gioca = tk.Button(root, text="Gioca", command=gioca)
+    btn_gioca_window = canvas.create_window(300, 150, window=btn_gioca)
+
+    btn_ringraziamenti = tk.Button(root, text="Ringraziamenti", command=ringraziamenti)
+    btn_ringraziamenti_window = canvas.create_window(300, 200, window=btn_ringraziamenti)
+
+    btn_esci = tk.Button(root, text="Esci", command=root.destroy)
+    btn_esci_window = canvas.create_window(300, 250, window=btn_esci)
+
+    root.mainloop()
 
 menu = Menu()
 
@@ -74,5 +94,6 @@ elemento3 = Elemento("Ringraziamenti", Azione(ringraziamenti))
 menu.aggiungi_elemento(elemento1)
 menu.aggiungi_elemento(elemento3)
 
-#Mostra il menu ripetibile
-menu.mostra_menu()
+# Mostra il menu grafico
+mostra_menu()
+
