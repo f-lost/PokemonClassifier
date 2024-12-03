@@ -12,7 +12,7 @@ from tensorflow.keras.layers import Dense # type: ignore
 
 def load_model():
     # Carico i pesi del modello
-    model_path = "model/pokemon_model.h5"
+    model_path = "model/pokemon_model.keras"
     model = tf.keras.models.load_model(model_path)
     return model
 
