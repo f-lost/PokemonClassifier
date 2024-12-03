@@ -52,10 +52,10 @@ class Battle():
 
     def generate_enemy_pokemon(self):
         random_id = random.randint(0, len(self.pokemons_df) - 1)
-        name = self.pokemons_df["name"].sample(n=random_id)
-        type1 = self.pokemons_df["type1"].sample(n=random_id)
-        type1_pred = self.pokemons_df["type1_pred"].sample(n=random_id)
-        type2 = self.pokemons_df["type2"].sample(n=random_id)
+        name = self.pokemons_df[random_id]["name"]
+        type1 = self.pokemons_df[random_id]["type1"]
+        type1_pred = self.pokemons_df[random_id]["type1_pred"]
+        type2 = self.pokemons_df[random_id]["type2"]
         return Pokemon(name, type1, type1_pred, type2)
     
     def choose_pokemon(self):
