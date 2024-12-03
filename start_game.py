@@ -12,16 +12,13 @@ from tensorflow.keras.layers import Dense # type: ignore
 
 def load_model():
     # Carico i pesi del modello
-    checkpoint_path = "model/pokemon_model.weights.h5"
-    model = Sequential()
-    model.add(Dense(256, activation='relu', input_shape=(27,)))
-    model.add(Dense(128, activation='relu'))
-    model.add(Dense(18, activation='softmax'))
-    model.load_weights(checkpoint_path)
+    model_path = "model/pokemon_model.h5"
+    model = tf.keras.models.load_model(model_path)
     return model
 
 def load_dataset():
     df = pd.read_csv('Pokemon.csv')
+    df.fillna('Nessuno', inplace=True)
     encoder = OneHotEncoder(sparse_output=False)
     onehot = encoder.fit_transform(df[['Type 1', 'Type 2']])
     column_names = encoder.get_feature_names_out(['Type 1', 'Type 2'])

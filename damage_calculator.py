@@ -240,7 +240,7 @@ def damage_double_typing(atk_types, def_types):
     return damage
 
 def damage_between_two_pokemons(atk_pokemon, def_pokemon):
-    atk_types = [atk_pokemon["type1"], atk_pokemon["type2"]]
-    def_types = [def_pokemon["type1"], def_pokemon["type2"]]
+    atk_types = [atk_pokemon.type1_pred, atk_pokemon.type2]
+    def_types = [def_pokemon.type1_pred, def_pokemon.type2]
     return damage_double_typing(atk_types, def_types)
 
