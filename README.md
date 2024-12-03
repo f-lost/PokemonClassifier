@@ -8,10 +8,10 @@ Gruppo: [Alessio Giuseppe Ferraioli](https://github.com/AlessioGFerraioli), [Dan
 # Classificatore di Tipo Pokemon
 
 ## Panoramica
-Questo progetto utilizza un modello di **Deep Learning** sviluppato con **TensorFlow** per classificare il tipo di un Pokemon basandosi sulle sue varie caratteristiche. Il modello sfrutta tecniche di apprendimento supervisionato per analizzare e prevedere il tipo di un Pokemon date le sue caratteristiche come statistiche, abilità e altre funzionalità presenti in un dataset popolare sui Pokemon. Inoltre sviluppare parallelamente un gioco tramite il dataset pokemon per creare delle battle in cui la vittoria/sconfitta tra di essa venga decisa dalla tipolagia dei pokemon. Quest'ultima verra pero assegnata dai risultati del nostro modello di DL.
+Questo progetto utilizza un modello di **Deep Learning** sviluppato con **TensorFlow** per classificare il tipo di un Pokemon basandosi sulle sue varie caratteristiche. Il modello sfrutta tecniche di apprendimento supervisionato per **prevedere** il **tipo di un Pokemon** date le sue caratteristiche presenti in un dataset popolare sui Pokemon. Inoltre, include un **mini-gioco** che simula delle **battaglie Pokemon** in cui la vittoria/sconfitta tra di essa dipende dalle interazioni tra i tipi dei Pokemon. *Ma attenzione!* Il tipo del Pokemon è quello assegnato dal nostro modello di DL!
 
 ## Caratteristiche
-- **Dataset:** Utilizza un dataset contenente info sui Pokemon.
+- **Dataset:** Utilizza un dataset contenente info basilari sui Pokemon.
 - **Framework di Deep Learning:** TensorFlow.
 - **Obiettivo:** Predire il tipo principale di un Pokemon (es. Fire, Water, Grass) basandosi sulle sue caratteristiche.
 - **Mini-Game:** Permettere all'utente di giocare una versione semplificata di una battaglia Pokemon, in cui il tipo dei Pokemon è quello generato dal modello.
@@ -26,7 +26,6 @@ Il dataset contiene informazioni su diversi Pokemon, tra cui:
 - tipo secondario;
 - se è leggendario o no;
 - e altro ancora
-
 
 Il dataset deve essere preprocessato per:
 1. Normalizzare le caratteristiche numeriche.
@@ -53,32 +52,6 @@ Assicurati di avere installato Python 3.8 o versioni superiori insieme alle segu
 - scikit-learn
 - matplotlib (opzionale, per visualizzazioni)
 
-### Installazione
-1. Clona il repository:
-   ```bash
-   git clone https://github.com/yourusername/pokemon-type-classifier.git
-   cd pokemon-type-classifier
-   ```
-2. Installa le dipendenze:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-### Utilizzo
-
-
-1. Preprocessa i dati:
-   ```bash
-   python src/preprocess.py
-   ```
-2. Allena il modello:
-   ```bash
-   python main.py
-   ```
-3. Valuta il modello:
-   ```bash
-   python src/evaluate.py
-   ```
 
 ## Architettura del Modello
 Il modello è composto dai seguenti livelli:
@@ -88,7 +61,10 @@ Il modello è composto dai seguenti livelli:
 4. Livello di output con una funzione di attivazione softmax per prevedere le probabilità per ogni tipo.
 
 ## Risultati
-Il modello raggiunge un'accuratezza del **X%** sul dataset di test dopo **Y epoche** di allenamento. Metriche aggiuntive come precisione, richiamo e F1-score vengono utilizzate per valutare ulteriormente le prestazioni.
+Il modello raggiunge un'accuratezza del **30%** sul dataset di test dopo **200 epoche** di allenamento. 
+
+Ogni appassionato di Pokemon sa che non c'è un collegamento preciso tra il tipo del Pokemon e le sue statistiche o tipo secondario. Bensì, queste caratteristiche sono decise dai game developer sulla base di motivazioni di **storytelling** e **game design**. Tuttavia, un giocatore attento nota che alcuni **pattern** emergono - *ad esempio, i Pokemon di tipo Steel (Acciaio) hanno solitamente una difesa elevata*. 
+Il nostro modello è in grado di carprire alcuni di questi pattern e ottenere una accuracy considerevolmente più alta del random chance, equivalente al **5%**.
 
 
 ## Ringraziamenti
