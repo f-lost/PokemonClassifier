@@ -23,7 +23,7 @@ class Battle():
         time.sleep(0.2)
         self.player_pokemon = self.choose_pokemon()
         time.sleep(0.5)
-        print("Il tuo {self.player_pokemon.name} di tipo {self.player_pokemon.type1_pred}/{self.player_pokemon.type2} attacca {self.enemy_pokemon.name} selvatico di tipo {self.player_pokemon.type1_pred}/{self.player_pokemon.type2}}!")
+        print(f"Il tuo {self.player_pokemon.name} di tipo {self.player_pokemon.type1_pred}/{self.player_pokemon.type2} attacca {self.enemy_pokemon.name} selvatico di tipo {self.player_pokemon.type1_pred}/{self.player_pokemon.type2}!")
         if self.enemy_pokemon.type1_pred != self.enemy_pokemon.type1:
             time.sleep(0.5)
             print(f"Cosa? Pensavi che {self.enemy_pokemon.name} fosse di tipo {self.enemy_pokemon.type1_pred}/{self.enemy_pokemon.type2}?\nNon secondo il nostro modello di Deep Learning!!!")
@@ -45,17 +45,17 @@ class Battle():
             vittoria = True
 
         if vittoria == False:
-            print("\nHai perso! Il tuo {self.player_pokemon.name} è stato sconfitto!")
+            print(f"\nHai perso! Il tuo {self.player_pokemon.name} è stato sconfitto!")
         else:
-            print("\nHai vinto! Il {self.enemy_pokemon.name} selvatico è stato sconfitto!")
+            print(f"\nHai vinto! Il {self.enemy_pokemon.name} selvatico è stato sconfitto!")
 
 
     def generate_enemy_pokemon(self):
         random_id = random.randint(0, len(self.pokemons_df) - 1)
-        name = self.pokemons_df[random_id]["name"]
-        type1 = self.pokemons_df[random_id]["type1"]
-        type1_pred = self.pokemons_df[random_id]["type1_pred"]
-        type2 = self.pokemons_df[random_id]["type2"]
+        name = self.pokemons_df["name"].sample(n=random_id)
+        type1 = self.pokemons_df["type1"].sample(n=random_id)
+        type1_pred = self.pokemons_df["type1_pred"].sample(n=random_id)
+        type2 = self.pokemons_df["type2"].sample(n=random_id)
         return Pokemon(name, type1, type1_pred, type2)
     
     def choose_pokemon(self):
@@ -70,7 +70,7 @@ class Battle():
                 return Pokemon(name, type1, type1_pred, type2)
 
     def pokemon_exists(self,name):
-        if name in self.pokemons_df["name"]:
+        if name in self.pokemons_df["name"].array:
             return True
         else:
             return False
