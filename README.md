@@ -35,8 +35,7 @@ Il dataset deve essere preprocessato per:
 ```
 Pokemon-Classifier/
 ├── model/                    # File del modello
-├── damage_calculator.py      # Funzioni di calcolo dei danni in battaglia
-├── battle.py                 # Simulazione battaglia Pokemon
+├── modulo_unico.py           # Contiene tutte le classi e le funzioni necessarie al gioco
 ├── genera_modello_DL.ipynb   # Genera modello Deep Learning
 ├── README.md                 # Descrizione del progetto (questo file)
 └── start_game.py             # Inizia il MiniGame battaglia Pokemon
