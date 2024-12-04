@@ -5,7 +5,7 @@ Progetto di gruppo: Classficazione del tipo di Pokemon a partire dal dataset: ht
 
 Gruppo: [Alessio Giuseppe Ferraioli](https://github.com/AlessioGFerraioli), [Daniele Florio](https://github.com/DanieleFlo), [Pier Carlo Ciraselli](https://github.com/pierca9494), [Roberta Basile](https://github.com/RobertaBasile), [Stefano Flora](https://github.com/f-lost)
 
-# Classificatore di Tipo Pokemon
+# Classificatore di Tipo Pokémon
 
 ## Panoramica
 Questo progetto utilizza un modello di **Deep Learning** sviluppato con **TensorFlow** per classificare il tipo di un Pokemon basandosi sulle sue varie caratteristiche. Il modello sfrutta tecniche di apprendimento supervisionato per **prevedere** il **tipo di un Pokemon** date le sue caratteristiche presenti in un dataset popolare sui Pokemon. Inoltre, include un **mini-gioco** che simula delle **battaglie Pokemon** in cui la vittoria/sconfitta tra di essa dipende dalle interazioni tra i tipi dei Pokemon. *Ma attenzione!* Il tipo del Pokemon è quello assegnato dal nostro modello di DL!
