@@ -14,7 +14,7 @@ Questo progetto utilizza un modello di **Deep Learning** sviluppato con **Tensor
 - **Dataset:** Utilizza un dataset contenente info basilari sui Pokemon.
 - **Framework di Deep Learning:** TensorFlow.
 - **Obiettivo:** Predire il tipo principale di un Pokemon (es. Fire, Water, Grass) basandosi sulle sue caratteristiche.
-- **Mini-Game:** Permettere all'utente di giocare una versione semplificata di una battaglia Pokemon, in cui il tipo dei Pokemon è quello generato dal modello.
+- **Mini-Game:** Permettere all'utente di giocare una versione semplificata di una battaglia Pokemon, in cui il tipo dei Pokemon è quello generato dal modello. 
 - **Preprocessing dei Dati:** Normalizza le caratteristiche e codifica le variabili categoriali.
 - **Architettura del Modello:** Implementa una rete neurale con livelli nascosti progettati per ottenere una migliore  accuratezza nella classificazione.
 
@@ -49,6 +49,7 @@ Assicurati di avere installato Python 3.8 o versioni superiori insieme alle segu
 - NumPy
 - pandas
 - scikit-learn
+- Pillow (il mini-game appare in una finestra grafica)
 - matplotlib (opzionale, per visualizzazioni)
 
 
