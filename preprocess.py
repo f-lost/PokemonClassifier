@@ -11,7 +11,7 @@ import tensorflow as tf
 from tensorflow.keras.utils import to_categorical # type: ignore
 from tensorflow.keras.utils import plot_model # type: ignore
 
-def preprocess(filename,batch_size=32):
+def preprocess(filename):
 
     # %% load data
     df = pd.read_csv(filename)
@@ -54,14 +54,5 @@ def preprocess(filename,batch_size=32):
     # %% define train and test dataset
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
-    train_dataset = tf.data.Dataset.from_tensor_slices((X_train, y_train))
-    test_dataset = tf.data.Dataset.from_tensor_slices((X_test, y_test))
 
-    # %% automatic optimization of parallelization
-    AUTOTUNE = tf.data.AUTOTUNE 
-
-    train_dataset = train_dataset.batch(batch_size).cache().prefetch(buffer_size=AUTOTUNE)
-    test_dataset = test_dataset.batch(batch_size).cache().prefetch(buffer_size=AUTOTUNE)
-
-
-return train_dataset, test_dataset
+    return X_train, X_test, y_train, y_test

@@ -92,4 +92,4 @@ def training(batch_size=32,
 
     plot_history(history)
 
-return model
+    return model
